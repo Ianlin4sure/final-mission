@@ -365,6 +365,10 @@ table {
     .intro h2 p {
         font-size: 10px;
     }
+    .footer{
+      flex-direction: column;
+      text-align: flex-start;
+    }
 	.main img{
 	object-fit: cover;
 }
