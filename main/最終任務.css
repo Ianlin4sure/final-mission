@@ -367,7 +367,7 @@ table {
     }
     .footer{
       flex-direction: column;
-      text-align: flex-start;
+      text-align: start;
     }
 	.main img{
 	object-fit: cover;
