@@ -366,8 +366,8 @@ table {
         font-size: 10px;
     }
     .footer{
-      flex-direction: column;
-      text-align: start;
+      justify-content: flex-start;
+      padding-right: 100px;
     }
 	.main img{
 	object-fit: cover;
