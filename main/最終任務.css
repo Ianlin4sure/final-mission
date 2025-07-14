@@ -1,0 +1,371 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+body.loaded {
+    opacity: 1;
+}
+#searchBtn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+}
+#searchBtn img{
+	width: 25px;
+	height: 25px;
+	padding-top: 5px;
+}
+.footer a img{
+  width: 20px;
+  height: 20px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
+}
+.search-box.show .search-panel {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+#searchInput {
+  display: none; /* 初始隱藏 */
+  padding: 6px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.search-box.show  #searchInput {
+  display: block;
+}
+.search-panel {
+  	position: absolute;
+  	top: 100%; /* 在按鈕下方 */
+	right: 0;
+	margin-top: 10px;
+	display: none;
+	padding: 10px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: all 0.3s ease;
+	z-index: 9999;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.main{
+    margin: 0;
+	
+}
+.main img{
+	width: 100%;
+	height: 900px;
+}
+.footer {
+	background: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 195px;
+	
+}
+.footer-linking{
+  display: flex;
+  padding-top: 75px;
+  padding-right: 45px;
+
+}
+.footer-linking a{
+  padding: 0 5px;
+}
+.footer p{
+	padding: 55px;
+  padding-top: 75px;
+	font-size: 16px;
+	font-weight: 300;
+  color: white;
+}
+.header{
+	background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+	align-items: center;
+	font-weight: bold;
+	font-size: 22px;
+	position: sticky;
+	top: 0;
+	z-index: 9999;     
+}
+.header a{
+	text-decoration: none;
+	color: black;
+}
+.header a:hover{
+	color: gray;
+}
+.header-items1{
+    margin: 10px 0;
+	margin-right: 25px;
+	
+}
+.header-items2{
+	margin: 10px 0;
+	margin-left: 25px;
+	
+
+}
+.header-items3{
+	margin: 10px 0;
+	margin-left: 50px;
+}
+.content{
+	display: flex;
+	position: relative;
+}
+.intro{
+	color: rgb(255, 255, 255);
+	font-size: 150px;
+	font-weight: bolder;
+	position: absolute;
+	left: 100px;
+	top: 240px;
+	text-align: left;
+	border-left: 1px solid white;
+	padding-left: 40px;
+}
+.intro h2 p{
+	font-size: 40px;
+}
+
+.chat-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+.chat-btn:hover {
+  background-color: #0056b3;
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 320px;
+  height: 450px;
+  max-height: 450px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+}
+
+.chat-header {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chat-body {
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+#chatInput {
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer-newsletter {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-newsletter form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.footer-newsletter label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.footer-newsletter input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  background-color: #000;
+  color: #fff;
+}
+
+.newsletter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.footer-newsletter button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width: 1200px) {
+    .intro {
+        font-size: 80px;
+    }
+
+    .intro h2 p {
+        font-size: 40px;
+    }
+	.main img{
+	object-fit: cover;
+}
+}
+@media (max-width: 990px) {
+    .intro {
+        font-size: 60px;
+    }
+
+    .intro h2 p {
+        font-size: 30px;
+    }
+	.main img{
+	object-fit: cover;
+}
+	
+}
+@media (max-width: 768px) {
+    .intro {
+        font-size: 50px;
+    }
+
+    .intro h2 p {
+        font-size: 18px;
+    }
+	.main img{
+	object-fit: cover;
+}
+}
+
+@media (max-width: 480px) {
+    .intro {
+        font-size: 40px;
+        top: 30px;
+        left: 10px;
+    }
+
+    .intro h2 p {
+        font-size: 10px;
+    }
+	.main img{
+	object-fit: cover;
+}
+}

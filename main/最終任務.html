@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian部落格</title>
+    <link rel="stylesheet" href="最終任務.css">
+</head>
+<body>
+        <div class="main">
+            <ul class="header">
+                <div class="search-box">
+                    <button id="searchBtn"><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt=""></button>
+                    <div class="search-panel">
+                        <input type="text" id="searchInput" placeholder="搜尋..." />
+
+                    </div>
+                    
+                </div>
+                <li class="header-items1"><a href="/main/最終任務.html">Home</a></li>
+                <li class="header-items2"><a href="/blog/blog.html">blog</a></li>
+                <li class="header-items3"><a href="/about/about.html">about</a></li>
+            </ul>
+            <div class="content">
+                <img src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/16da9aa899a5190ed2d5bdfe48ae1cc631b95463/2025-web-camp/mobile/index/photo5.png" alt="">
+                <div class="intro"><h2>Ian Lin<p><br>普通高中生 & 資訊愛好者</p></h2></div>
+            </div>
+
+            <div class="footer">
+              <div class="footer-linking">
+                <a target="_blank" href="https://www.facebook.com/"><img src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png" alt=""></a><a target="_blank" href="https://www.instagram.com/"><img src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81af6121f84c41a5b4391d7d37fce12a.png" alt=""></a><a target="_blank" href="https://www.pinterest.com/"><img src="https://static.wixstatic.com/media/9c486556465843c5850fabfd68dfae49.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9c486556465843c5850fabfd68dfae49.png" alt=""></a><a target="_blank" href="https://x.com/"><img src="https://static.wixstatic.com/media/01ab6619093f45388d66736ec22e5885.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/01ab6619093f45388d66736ec22e5885.png" alt=""></a>
+              </div>
+              
+              <div class="footer-newsletter">
+  <form id="newsletterForm">
+    <label for="newsletterEmail">Enter your email here <span>*</span></label>
+    <input type="email" id="newsletterEmail" placeholder="your@email.com" required>
+
+    <div class="newsletter-checkbox">
+      <input type="checkbox" id="subscribeCheckbox" required>
+      <label for="subscribeCheckbox">Yes, subscribe me to your newsletter. <span>*</span></label>
+    </div>
+
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+                    <p>© 2025 Ian部落格. All rights reserved.</p>
+            </div>
+            
+            
+        </div>
+<!-- 聊天按鈕 -->
+<button id="chatBtn" class="chat-btn">💬</button>
+
+<!-- 聊天視窗 -->
+<div id="chatWindow" class="chat-window">
+  <div class="chat-header">
+    <span>聯絡我!</span>
+    <button id="closeChat" class="close-btn">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <P><strong>👀想跟我聯絡嗎?<br><br>我的email: ian.lin0111@gmail.com</strong></P>
+  </div>
+  <input type="text" id="chatInput" placeholder="輸入訊息..." />
+</div>
+  
+</div>
+        <script>
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+const searchBtn = document.getElementById("searchBtn");
+const searchContainer = document.querySelector(".search-box");
+const searchInput = document.getElementById("searchInput");
+
+searchBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); // 阻止點按按鈕時觸發 document click
+  searchContainer.classList.toggle("show");
+  searchInput.focus();
+});
+
+searchInput.addEventListener("input", () => {
+  const keyword = searchInput.value.trim().toLowerCase();
+  const items = document.querySelectorAll(".content-item");
+  const hint = document.getElementById("searchHint");
+
+  let hasMatch = false;
+
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (text.includes(keyword)) {
+      item.style.display = "block";
+      hasMatch = true;
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  if (keyword === "") {
+    hint.textContent = "請輸入關鍵字以顯示結果";
+    hint.style.display = "block";
+  } else if (!hasMatch) {
+    hint.textContent = "找不到相關內容";
+    hint.style.display = "block";
+  } else {
+    hint.style.display = "none";
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!searchContainer.contains(e.target)) {
+    searchContainer.classList.remove("show");
+  }
+});
+
+const chatBtn = document.getElementById("chatBtn");
+const chatWindow = document.getElementById("chatWindow");
+const closeChat = document.getElementById("closeChat");
+const chatInput = document.getElementById("chatInput");
+const chatBody = document.getElementById("chatBody");
+
+chatBtn.addEventListener("click", () => {
+  chatWindow.style.display = "flex";
+  chatInput.focus();
+});
+
+closeChat.addEventListener("click", () => {
+  chatWindow.style.display = "none";
+});
+
+// 簡單示範輸入訊息後在聊天視窗顯示
+chatInput.addEventListener("keydown", (e) => {
+  if(e.key === "Enter" && chatInput.value.trim() !== "") {
+    const userMsg = document.createElement("div");
+    userMsg.textContent = chatInput.value.trim();
+    userMsg.style.padding = "6px 8px";
+    userMsg.style.margin = "4px 0";
+    userMsg.style.background = "#e0e0e0";
+    userMsg.style.borderRadius = "6px";
+    chatBody.appendChild(userMsg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    chatInput.value = "";
+  }
+});
+
+</script>
+     
+</body>
+</html>

@@ -1,0 +1,199 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+.header-item{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.header a:hover{
+    box-shadow: none;
+    color: gray !important;
+}
+.content{
+	width: 800px;
+    margin: 0 auto;
+}
+.content h1{
+    font-size: 40px;
+    font-family:"LiHei Pro", sans-serif;
+    padding: 30px 0;
+    font-weight: 600;
+}
+.content img{
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.content p{
+    font-size: 18px;
+    font-family:"LiHei Pro", sans-serif;
+    padding: 10px 0;
+    font-weight: 400;
+    line-height: 24px;
+}
+.date{
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.small img{
+	width: 40px;
+	height: 40px;
+}
+img{
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+.grid{
+    display: flex;
+
+
+}
+.grid li{
+    padding: 0 15px;
+}
+.clear{
+	color: black;
+	text-decoration: none;
+}
+.clear-w{
+	color: white;
+	text-decoration: none;
+}
+.footer{
+	display: flex;
+	flex-direction: column;
+	height: 203px;
+	background: #282829;
+	padding: 25px 260px;
+}
+.footer-p{
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+}
+.footer-item{
+	display: flex;
+	color: white;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	border-bottom: 1px solid  #494848;
+}
+.footer-item h3{
+	font-size: 24px;
+}
+.footer-item h3 p{
+	font-size: 16px;
+}
+.footer-item a{
+	padding-right: 30px;
+	
+}
+.footer a:hover{
+    box-shadow: none;
+    color: gray !important;
+}
+@media(max-width:1440px){
+    .header-item{
+        max-width: 1000px;
+    }
+	.footer {
+        padding: 25px 120px;
+    }
+}
+@media(max-width:1200px){
+    .header-item{
+        max-width: 800px;
+    }
+	 .footer {
+        padding: 25px 60px;
+    }
+
+    .footer-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-item h3 {
+        margin-bottom: 10px;
+    }
+}
+@media(max-width:768px){
+    .header-item{
+        width: 400px;
+        left: 100px;
+    }
+	.footer {
+        padding: 20px 20px;
+    }
+
+    .footer-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-item h3 {
+        margin-bottom: 10px;
+    }
+}
