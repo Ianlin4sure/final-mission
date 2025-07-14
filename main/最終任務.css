@@ -388,7 +388,11 @@ table {
   }
 
   .footer p {
-    padding: 20px 0;
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
   }
 	.main img{
 	object-fit: cover;
