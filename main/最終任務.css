@@ -365,10 +365,31 @@ table {
     .intro h2 p {
         font-size: 10px;
     }
-    .footer{
-      justify-content: flex-start;
-      padding-right: 100px;
-    }
+    .footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .footer-linking {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .footer-newsletter {
+    padding: 20px 10px;
+    width: 100%;
+  }
+
+  .footer-newsletter form {
+    width: 100%;
+  }
+
+  .footer p {
+    padding: 20px 0;
+  }
 	.main img{
 	object-fit: cover;
 }
